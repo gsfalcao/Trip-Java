@@ -1,4 +1,3 @@
-
 package com.exemplo.controller;
 
 import com.exemplo.model.User;
@@ -28,7 +27,7 @@ public class UserController {
     @POST
     @Path("/login")
     public Response login(User user) {
-        User logged = userService.login(user.getEmail(), user.getPassword());
+        User logged = userService.login(user.getEmail(), user.getSenha());
         if (logged != null) {
             return Response.ok(logged).build();
         }
