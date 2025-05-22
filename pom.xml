@@ -2,6 +2,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.exemplo</groupId>
   <artifactId>quarkus-api</artifactId>
   <version>1.0.0</version>
@@ -28,22 +29,28 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- JAX-RS -->
+    <!-- RESTEasy Reactive -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-rest</artifactId>
     </dependency>
 
-    <!-- JPA + Panache -->
+    <!-- Hibernate ORM + Panache -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-hibernate-orm-panache</artifactId>
     </dependency>
 
-    <!-- Oracle JDBC -->
+    <!-- Oracle JDBC Driver -->
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-jdbc-oracle</artifactId>
+    </dependency>
+
+    <!-- Jackson para JSON (necessário para aceitar application/json) -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
     </dependency>
   </dependencies>
 
