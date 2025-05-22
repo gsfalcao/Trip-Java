@@ -20,8 +20,15 @@ public class UserController {
     @POST
     @Path("/register")
     public Response register(User user) {
-        userService.save(user);
-        return Response.status(Response.Status.CREATED).entity(user).build();
+        try {
+            userService.save(user);
+            return Response.status(Response.Status.CREATED).entity(user).build();
+        } catch (Exception e) {
+            e.printStackTrace(); // Vai aparecer nos logs do Railway
+            return Response.serverError()
+                    .entity("Erro interno ao registrar usuário: " + e.getMessage())
+                    .build();
+        }
     }
 
     @POST
