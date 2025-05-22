@@ -35,7 +35,7 @@ public class UserService {
 
     public User login(String email, String password) {
         User user = userRepository.findByEmail(email);
-        if (user != null && user.getPassword().equals(password)) {
+        if (user != null && user.getSenha().equals(password)) {
             return user;
         }
         return null;
